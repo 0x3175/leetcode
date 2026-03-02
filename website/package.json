@@ -1,17 +1,19 @@
 {
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "download": "leetcode-site download && yarn generate-docs",
-    "generate-docs": "node ./scripts/generateDocs.js",
-    "clear": "node ./scripts/clear.js",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "GIT_USER=wangyu CURRENT_BRANCH=master USE_SSH=true docusaurus-publish",
-    "write-translations": "docusaurus-write-translations",
-    "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "devDependencies": {
-    "docusaurus": "^1.7.3",
-    "leetcode-site-generator": "^0.2.0"
+    "@11ty/eleventy": "^3.1.2",
+    "lucide-static": "^0.576.0"
   }
 }

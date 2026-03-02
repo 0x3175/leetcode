@@ -1,0 +1,30 @@
+---
+layout: layout.njk
+title: Solutions
+---
+
+<h1>Problem Solutions</h1>
+
+<div class="problems-list">
+  {% for problem in collections.problems %}
+    <div class="problem-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <h2 style="margin: 0; font-size: 1.25rem;">
+          <a href="{{ problem.url }}">{{ problem.data.title }}</a>
+        </h2>
+        <span class="badge" style="background-color: {{ problem.data.difficulty | difficultyColor }}22; color: {{ problem.data.difficulty | difficultyColor }}; border: 1px solid {{ problem.data.difficulty | difficultyColor }}44;">
+          {{ problem.data.difficulty }}
+        </span>
+      </div>
+      <div style="font-size: 0.9rem; color: #8b949e;">
+        {% for tag in problem.data.tags %}
+          {% if tag != "problems" %}
+            <span style="margin-right: 1rem;">#{{ tag }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <p>No problems found. Run the sync script to generate content!</p>
+  {% endfor %}
+</div>

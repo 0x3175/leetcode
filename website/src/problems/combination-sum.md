@@ -1,0 +1,87 @@
+---
+layout: "layout.njk"
+title: "Combination Sum"
+difficulty: "Migrated"
+tags: 
+  - problems
+---
+
+# Combination Sum
+
+<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
+  {{ difficulty }}
+</div>
+
+<h2 id="problem-description">Problem Description</h2>
+
+<div class="description">
+<p>Given a <strong>set</strong> of candidate numbers (<code>candidates</code>) <strong>(without duplicates)</strong> and a target number (<code>target</code>), find all unique combinations in <code>candidates</code>&nbsp;where the candidate numbers sums to <code>target</code>.</p>
+
+<p>The <strong>same</strong> repeated number may be chosen from <code>candidates</code>&nbsp;unlimited number of times.</p>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+	<li>All numbers (including <code>target</code>) will be positive integers.</li>
+	<li>The solution set must not contain duplicate combinations.</li>
+</ul>
+
+<p><strong>Example 1:</strong></p>
+
+<pre>
+<strong>Input:</strong> candidates = <code>[2,3,6,7], </code>target = <code>7</code>,
+<strong>A solution set is:</strong>
+[
+  [7],
+  [2,2,3]
+]
+</pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> candidates = [2,3,5]<code>, </code>target = 8,
+<strong>A solution set is:</strong>
+[
+&nbsp; [2,2,2,2],
+&nbsp; [2,3,3],
+&nbsp; [3,5]
+]
+</pre>
+
+</div>
+
+<h2 id="solution">Solution (javascript)</h2>
+
+```js
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+var combinationSum = function(candidates, target) {
+    function findCom(cans, target, rst, arr) {
+        if(target === 0){
+            rst.push(arr);
+        } else {
+            for(let i = 0; i < cans.length; i++){
+                if(cans[i] <= target){
+                    let newArr = arr.slice();
+                    newArr.push(cans[i]);
+                    findCom(cans.slice(i), target-cans[i], rst, newArr);
+                }
+            }
+        }
+    }
+    
+    candidates.sort((a, b) => a - b);
+    let rst = new Array();
+    for(let i = 0; i < candidates.length; i++){
+        if(candidates[i] <= target){
+            findCom(candidates.slice(i), target-candidates[i], rst, [candidates[i]]);
+        }
+    }
+    
+    return rst;
+};
+```

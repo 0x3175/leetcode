@@ -1,0 +1,238 @@
+:root {
+  --primary-color: #2E8555;
+  --header-bg: #2E8555;
+  --footer-bg: #1A1C22;
+  --sidebar-bg: #F5F6F7;
+  --bg-color: #FFFFFF;
+  --text-color: #24292E;
+  --border-color: #E1E4E8;
+  --font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  height: 60px;
+  background-color: var(--header-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header .logo {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a {
+  margin-left: 20px;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  font-weight: 500;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* Page Layout */
+.page-wrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  padding: 20px 0;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  font-size: 0.9rem;
+  color: #6A737D;
+  text-transform: uppercase;
+  padding: 0 20px 10px;
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li a {
+  display: block;
+  padding: 8px 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar li a:hover {
+  background-color: rgba(46, 133, 85, 0.1);
+  color: var(--primary-color);
+}
+
+.sidebar li.active a {
+  color: var(--primary-color);
+  font-weight: bold;
+  border-left: 3px solid var(--primary-color);
+  background-color: rgba(46, 133, 85, 0.05);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-content h1 {
+  font-size: 2.25rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.main-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Table of Contents (Right) */
+.toc {
+  width: 250px;
+  padding: 40px 20px;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  font-size: 13px;
+}
+
+.toc h4 {
+  margin: 0 0 10px;
+  color: #6A737D;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--border-color);
+}
+
+.toc li a {
+  display: block;
+  padding: 5px 15px;
+  color: #6A737D;
+  text-decoration: none;
+}
+
+.toc li a:hover {
+  color: var(--primary-color);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Code Blocks */
+pre {
+  background-color: #282C34;
+  color: #ABB2BF;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: var(--mono-font);
+  font-size: 14px;
+}
+
+.description pre {
+  background-color: #F7F9FA;
+  color: #24292E;
+  border: 1px solid var(--border-color);
+}
+
+code {
+  font-family: var(--mono-font);
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: #8b949e;
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+footer .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+
+  .sidebar,
+  .toc {
+    display: none;
+  }
+}

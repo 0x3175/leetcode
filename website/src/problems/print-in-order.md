@@ -1,0 +1,85 @@
+---
+layout: "layout.njk"
+title: "Print in Order"
+difficulty: "Migrated"
+tags: 
+  - problems
+---
+
+# Print in Order
+
+<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
+  {{ difficulty }}
+</div>
+
+<h2 id="problem-description">Problem Description</h2>
+
+<div class="description">
+<p>Suppose we have a class:</p>
+
+<pre>
+public class Foo {
+&nbsp; public void first() { print(&quot;first&quot;); }
+&nbsp; public void second() { print(&quot;second&quot;); }
+&nbsp; public void third() { print(&quot;third&quot;); }
+}
+</pre>
+
+<p>The same instance of <code>Foo</code> will be passed to three different threads. Thread A will call <code>first()</code>, thread B will call <code>second()</code>, and thread C will call <code>third()</code>. Design a mechanism and modify the program&nbsp;to ensure that&nbsp;<code>second()</code>&nbsp;is executed after&nbsp;<code>first()</code>, and&nbsp;<code>third()</code> is executed after&nbsp;<code>second()</code>.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Example 1:</strong></p>
+
+<pre>
+<b>Input:</b> [1,2,3]
+<b>Output:</b> &quot;firstsecondthird&quot;
+<strong>Explanation:</strong> There are three threads being fired asynchronously. The input [1,2,3] means thread A calls first(), thread B calls second(), and thread C calls third(). &quot;firstsecondthird&quot; is the correct output.
+</pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre>
+<b>Input:</b> [1,3,2]
+<b>Output:</b> &quot;firstsecondthird&quot;
+<strong>Explanation:</strong> The input [1,3,2] means thread A calls first(), thread B calls third(), and thread C calls second(). &quot;firstsecondthird&quot; is the correct output.</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>Note:</strong></p>
+
+<p>We do not know how the threads will be scheduled in the operating system, even though the numbers in the input seems to imply the ordering. The input format you see is mainly&nbsp;to ensure our tests&#39; comprehensiveness.</p>
+
+</div>
+
+<h2 id="solution">Solution (java)</h2>
+
+```java
+import java.util.concurrent.*;
+
+class Foo {
+
+    Semaphore run2, run3;
+
+    public Foo() {
+        run2 = new Semaphore(0);
+        run3 = new Semaphore(0);
+    }
+
+    public void first(Runnable printFirst) throws InterruptedException {
+        printFirst.run();
+        run2.release();
+    }
+
+    public void second(Runnable printSecond) throws InterruptedException {
+        run2.acquire();
+        printSecond.run();
+        run3.release();
+    }
+
+    public void third(Runnable printThird) throws InterruptedException {
+        run3.acquire(); 
+        printThird.run();
+    }
+}
+```

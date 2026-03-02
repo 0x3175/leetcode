@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | LeetCode</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <span>LeetCode</span>
+            </a>
+            <nav>
+                <a href="/">Problems</a>
+                <a href="https://github.com/0x3175/leetcode">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <h3>Problems</h3>
+            <ul>
+                {% for problem in collections.problems | sort(false, false, 'data.title') %}
+                <li class="{% if page.url == problem.url %}active{% endif %}">
+                    <a href="{{ problem.url }}">{{ problem.data.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            {{ content | safe }}
+        </main>
+
+        <aside class="toc">
+            <h4>On this page</h4>
+            <ul>
+                <li><a href="#problem-description">Description</a></li>
+                <li><a href="#solution">Solution</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div>&copy; {{ page.date.getFullYear() }} 0x3175.</div>
+            <div>Built with 11ty</div>
+        </div>
+    </footer>
+</body>
+</html>

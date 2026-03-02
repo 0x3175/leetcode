@@ -1,7 +1,17 @@
-.vscode
+# 11ty Build output
+website/_site/
 
-node_modules
+# Dependency directories
+node_modules/
+website/node_modules/
 
-build
+# Logs
+npm-debug.log*
 
-script.js
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Env secrets
+.env
+.env.local
