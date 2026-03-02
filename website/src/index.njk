@@ -10,7 +10,7 @@ title: Solutions
     <div class="problem-card">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
         <h2 style="margin: 0; font-size: 1.25rem;">
-          <a href="{{ problem.url }}" style="color: var(--accent-color);">{{ problem.data.title }}</a>
+          <a href="{{ problem.url | url }}" style="color: var(--accent-color);">{{ problem.data.title }}</a>
         </h2>
         {% if problem.data.difficulty and problem.data.difficulty != "" %}
         <span class="badge" style="background-color: {{ problem.data.difficulty | difficultyColor }}22; color: {{ problem.data.difficulty | difficultyColor }}; border: 1px solid {{ problem.data.difficulty | difficultyColor }}44;">

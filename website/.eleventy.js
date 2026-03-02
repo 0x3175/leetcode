@@ -1,6 +1,8 @@
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/js");
+    eleventyConfig.addPassthroughCopy("src/problems");
+    eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
     // Filter to extract difficulty color
     eleventyConfig.addFilter("difficultyColor", function (difficulty) {
@@ -13,6 +15,7 @@ module.exports = function (eleventyConfig) {
     });
 
     return {
+        pathPrefix: "/leetcode/",
         dir: {
             input: "src",
             output: "_site",
