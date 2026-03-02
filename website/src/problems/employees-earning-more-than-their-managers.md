@@ -30,8 +30,8 @@ sidebar_label: Employees Earning More Than Their Managers
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select e.Name as Employee
 from Employee e

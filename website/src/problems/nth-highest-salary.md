@@ -29,8 +29,8 @@ sidebar_label: Nth Highest Salary
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   DECLARE M INT;

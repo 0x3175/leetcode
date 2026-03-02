@@ -48,8 +48,8 @@ sidebar_label: Department Highest Salary
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select 
     d.Name as Department,

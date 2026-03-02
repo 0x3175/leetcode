@@ -33,8 +33,8 @@ sidebar_label: Consecutive Numbers
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 SELECT DISTINCT
     l1.Num AS ConsecutiveNums

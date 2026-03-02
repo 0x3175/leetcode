@@ -53,8 +53,8 @@ sidebar_label: Department Top Three Salaries
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select 
     d.Name as Department,

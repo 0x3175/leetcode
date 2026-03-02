@@ -581,7 +581,7 @@
     "status": "ac",
     "content": "<p>Table: <code>Person</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| PersonId    | int     |\r\n| FirstName   | varchar |\r\n| LastName    | varchar |\r\n+-------------+---------+\r\nPersonId is the primary key column for this table.\r\n</pre>\r\n\r\n<p>Table: <code>Address</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| AddressId   | int     |\r\n| PersonId    | int     |\r\n| City        | varchar |\r\n| State       | varchar |\r\n+-------------+---------+\r\nAddressId is the primary key column for this table.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:</p>\r\n\r\n<pre>\r\nFirstName, LastName, City, State\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nselect FirstName, LastName, City, State\nfrom Person\nleft join Address on Person.PersonId = Address.PersonId;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Second Highest Salary",
@@ -589,7 +589,7 @@
     "status": "ac",
     "content": "<p>Write a SQL query to get the second highest salary from the <code>Employee</code> table.</p>\r\n\r\n<pre>\r\n+----+--------+\r\n| Id | Salary |\r\n+----+--------+\r\n| 1  | 100    |\r\n| 2  | 200    |\r\n| 3  | 300    |\r\n+----+--------+\r\n</pre>\r\n\r\n<p>For example, given the above Employee table, the query should return <code>200</code> as the second highest salary. If there is no second highest salary, then the query should return <code>null</code>.</p>\r\n\r\n<pre>\r\n+---------------------+\r\n| SecondHighestSalary |\r\n+---------------------+\r\n| 200                 |\r\n+---------------------+\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nselect (\n    select distinct Salary \n    from Employee \n    order by Salary desc\n    limit 1\n    offset 1\n) as SecondHighestSalary;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Nth Highest Salary",
@@ -597,7 +597,7 @@
     "status": "ac",
     "content": "<p>Write a SQL query to get the <em>n</em><sup>th</sup> highest salary from the <code>Employee</code> table.</p>\r\n\r\n<pre>\r\n+----+--------+\r\n| Id | Salary |\r\n+----+--------+\r\n| 1  | 100    |\r\n| 2  | 200    |\r\n| 3  | 300    |\r\n+----+--------+\r\n</pre>\r\n\r\n<p>For example, given the above Employee table, the <em>n</em><sup>th</sup> highest salary where <em>n</em> = 2 is <code>200</code>. If there is no <em>n</em><sup>th</sup> highest salary, then the query should return <code>null</code>.</p>\r\n\r\n<pre>\r\n+------------------------+\r\n| getNthHighestSalary(2) |\r\n+------------------------+\r\n| 200                    |\r\n+------------------------+\r\n</pre>\r\n",
     "code": "CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT\nBEGIN\n  DECLARE M INT;\n  SET M=N-1;\n  RETURN (\n      # Write your MySQL query statement below.\n      select distinct Salary from Employee\n      order by Salary desc\n      limit M, 1\n  );\nEND",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Rank Scores",
@@ -605,7 +605,7 @@
     "status": "ac",
     "content": "<p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no &quot;holes&quot; between ranks.</p>\r\n\r\n<pre>\r\n+----+-------+\r\n| Id | Score |\r\n+----+-------+\r\n| 1  | 3.50  |\r\n| 2  | 3.65  |\r\n| 3  | 4.00  |\r\n| 4  | 3.85  |\r\n| 5  | 4.00  |\r\n| 6  | 3.65  |\r\n+----+-------+\r\n</pre>\r\n\r\n<p>For example, given the above <code>Scores</code> table, your query should generate the following report (order by highest score):</p>\r\n\r\n<pre>\r\n+-------+------+\r\n| Score | Rank |\r\n+-------+------+\r\n| 4.00  | 1    |\r\n| 4.00  | 1    |\r\n| 3.85  | 2    |\r\n|&nbsp;3.65  | 3    |\r\n| 3.65  | 3    |\r\n| 3.50  | 4    |\r\n+-------+------+\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nselect Score,\n    (select count(distinct Score) from Scores where Score >= s.Score) as Rank\nfrom Scores s\norder by Score desc;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Consecutive Numbers",
@@ -613,7 +613,7 @@
     "status": "ac",
     "content": "<p>Write a SQL query to find all numbers that appear at least three times consecutively.</p>\r\n\r\n<pre>\r\n+----+-----+\r\n| Id | Num |\r\n+----+-----+\r\n| 1  |  1  |\r\n| 2  |  1  |\r\n| 3  |  1  |\r\n| 4  |  2  |\r\n| 5  |  1  |\r\n| 6  |  2  |\r\n| 7  |  2  |\r\n+----+-----+\r\n</pre>\r\n\r\n<p>For example, given the above <code>Logs</code> table, <code>1</code> is the only number that appears consecutively for at least three times.</p>\r\n\r\n<pre>\r\n+-----------------+\r\n| ConsecutiveNums |\r\n+-----------------+\r\n| 1               |\r\n+-----------------+\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nSELECT DISTINCT\n    l1.Num AS ConsecutiveNums\nFROM\n    Logs l1,\n    Logs l2,\n    Logs l3\nWHERE\n    l1.Id = l2.Id - 1\n    AND l2.Id = l3.Id - 1\n    AND l1.Num = l2.Num\n    AND l2.Num = l3.Num\n;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Employees Earning More Than Their Managers",
@@ -621,7 +621,7 @@
     "status": "ac",
     "content": "<p>The <code>Employee</code> table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.</p>\r\n\r\n<pre>\r\n+----+-------+--------+-----------+\r\n| Id | Name  | Salary | ManagerId |\r\n+----+-------+--------+-----------+\r\n| 1  | Joe   | 70000  | 3         |\r\n| 2  | Henry | 80000  | 4         |\r\n| 3  | Sam   | 60000  | NULL      |\r\n| 4  | Max   | 90000  | NULL      |\r\n+----+-------+--------+-----------+\r\n</pre>\r\n\r\n<p>Given the <code>Employee</code> table, write a SQL query that finds out employees who earn more than their managers. For the above table, Joe is the only employee who earns more than his manager.</p>\r\n\r\n<pre>\r\n+----------+\r\n| Employee |\r\n+----------+\r\n| Joe      |\r\n+----------+\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nselect e.Name as Employee\nfrom Employee e\njoin Employee m on e.ManagerId = m.Id\nwhere e.Salary > m.Salary;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Duplicate Emails",
@@ -629,7 +629,7 @@
     "status": "ac",
     "content": "<p>Write a SQL query to find all duplicate emails in a table named <code>Person</code>.</p>\r\n\r\n<pre>\r\n+----+---------+\r\n| Id | Email   |\r\n+----+---------+\r\n| 1  | a@b.com |\r\n| 2  | c@d.com |\r\n| 3  | a@b.com |\r\n+----+---------+\r\n</pre>\r\n\r\n<p>For example, your query should return the following for the above table:</p>\r\n\r\n<pre>\r\n+---------+\r\n| Email   |\r\n+---------+\r\n| a@b.com |\r\n+---------+\r\n</pre>\r\n\r\n<p><strong>Note</strong>: All emails are in lowercase.</p>\r\n",
     "code": "# Write your MySQL query statement below\nselect Email\nfrom (\n    select Email, count(Id) as Count\n    from Person\n    group by Email\n) as EmailCount\nwhere EmailCount.Count > 1;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Customers Who Never Order",
@@ -637,7 +637,7 @@
     "status": "ac",
     "content": "<p>Suppose that a website contains two tables, the <code>Customers</code> table and the <code>Orders</code> table. Write a SQL query to find all customers who never order anything.</p>\r\n\r\n<p>Table: <code>Customers</code>.</p>\r\n\r\n<pre>\r\n+----+-------+\r\n| Id | Name  |\r\n+----+-------+\r\n| 1  | Joe   |\r\n| 2  | Henry |\r\n| 3  | Sam   |\r\n| 4  | Max   |\r\n+----+-------+\r\n</pre>\r\n\r\n<p>Table: <code>Orders</code>.</p>\r\n\r\n<pre>\r\n+----+------------+\r\n| Id | CustomerId |\r\n+----+------------+\r\n| 1  | 3          |\r\n| 2  | 1          |\r\n+----+------------+\r\n</pre>\r\n\r\n<p>Using the above tables as example, return the following:</p>\r\n\r\n<pre>\r\n+-----------+\r\n| Customers |\r\n+-----------+\r\n| Henry     |\r\n| Max       |\r\n+-----------+\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nselect c.Name as Customers\nfrom Customers c\nwhere 0 = (\n    select count(*) \n    from Orders o\n    where o.CustomerId = c.Id\n)",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Department Highest Salary",
@@ -645,7 +645,7 @@
     "status": "ac",
     "content": "<p>The <code>Employee</code> table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.</p>\r\n\r\n<pre>\r\n+----+-------+--------+--------------+\r\n| Id | Name  | Salary | DepartmentId |\r\n+----+-------+--------+--------------+\r\n| 1  | Joe   | 70000  | 1            |\r\n| 2 &nbsp;| Jim &nbsp; | 90000 &nbsp;| 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|\r\n| 3  | Henry | 80000  | 2            |\r\n| 4  | Sam   | 60000  | 2            |\r\n| 5  | Max   | 90000  | 1            |\r\n+----+-------+--------+--------------+\r\n</pre>\r\n\r\n<p>The <code>Department</code> table holds all departments of the company.</p>\r\n\r\n<pre>\r\n+----+----------+\r\n| Id | Name     |\r\n+----+----------+\r\n| 1  | IT       |\r\n| 2  | Sales    |\r\n+----+----------+\r\n</pre>\r\n\r\n<p>Write a SQL query to find employees who have the highest salary in each of the departments.&nbsp;For the above tables, your SQL query should return the following rows (order of rows does not matter).</p>\r\n\r\n<pre>\r\n+------------+----------+--------+\r\n| Department | Employee | Salary |\r\n+------------+----------+--------+\r\n| IT         | Max      | 90000  |\r\n| IT &nbsp; &nbsp; &nbsp; &nbsp; | Jim &nbsp; &nbsp; &nbsp;| 90000 &nbsp;|\r\n| Sales      | Henry    | 80000  |\r\n+------------+----------+--------+\r\n</pre>\r\n\r\n<p><strong>Explanation:</strong></p>\r\n\r\n<p>Max and Jim both have&nbsp;the highest salary in the IT department and Henry has the highest salary in the Sales department.</p>\r\n",
     "code": "# Write your MySQL query statement below\nselect \n    d.Name as Department,\n    e.Name as Employee,\n    e.Salary as Salary\nfrom Department d\njoin Employee e on d.Id = e.DepartmentId\nwhere (e.DepartmentId, e.Salary) in (\n    select DepartmentId, max(Salary) from Employee group by DepartmentId\n)",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Department Top Three Salaries",
@@ -653,7 +653,7 @@
     "status": "ac",
     "content": "<p>The <code>Employee</code> table holds all employees. Every employee has an Id, and there is also a column for the department Id.</p>\r\n\r\n<pre>\r\n+----+-------+--------+--------------+\r\n| Id | Name  | Salary | DepartmentId |\r\n+----+-------+--------+--------------+\r\n| 1  | Joe   | 85000  | 1            |\r\n| 2  | Henry | 80000  | 2            |\r\n| 3  | Sam   | 60000  | 2            |\r\n| 4  | Max   | 90000  | 1            |\r\n| 5  | Janet | 69000  | 1            |\r\n| 6  | Randy | 85000  | 1            |\r\n| 7  | Will  | 70000  | 1            |\r\n+----+-------+--------+--------------+\r\n</pre>\r\n\r\n<p>The <code>Department</code> table holds all departments of the company.</p>\r\n\r\n<pre>\r\n+----+----------+\r\n| Id | Name     |\r\n+----+----------+\r\n| 1  | IT       |\r\n| 2  | Sales    |\r\n+----+----------+\r\n</pre>\r\n\r\n<p>Write a SQL query to find employees who earn the top three salaries in each of the department. For the above tables, your SQL query should return the following rows (order of rows does not matter).</p>\r\n\r\n<pre>\r\n+------------+----------+--------+\r\n| Department | Employee | Salary |\r\n+------------+----------+--------+\r\n| IT         | Max      | 90000  |\r\n| IT         | Randy    | 85000  |\r\n| IT         | Joe      | 85000  |\r\n| IT         | Will     | 70000  |\r\n| Sales      | Henry    | 80000  |\r\n| Sales      | Sam      | 60000  |\r\n+------------+----------+--------+\r\n</pre>\r\n\r\n<p><strong>Explanation:</strong></p>\r\n\r\n<p>In IT department, Max earns the highest salary, both Randy and Joe earn the second highest salary, and Will earns the third highest salary. There are only two employees in the Sales department, Henry earns the highest salary while Sam earns the second highest salary.</p>\r\n",
     "code": "# Write your MySQL query statement below\nselect \n    d.Name as Department,\n    e.Name as Employee,\n    e.Salary as Salary\nfrom Department d\njoin Employee e on d.Id = e.DepartmentId\nwhere 3 > (\n    select count(distinct Salary)\n    from Employee e2\n    where e2.DepartmentId = e.DepartmentId\n    and e2.Salary > e.Salary\n)",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Delete Duplicate Emails",
@@ -661,7 +661,7 @@
     "status": "ac",
     "content": "<p>Write a SQL query to <strong>delete</strong> all duplicate email entries in a table named <code>Person</code>, keeping only unique emails based on its <i>smallest</i> <b>Id</b>.</p>\r\n\r\n<pre>\r\n+----+------------------+\r\n| Id | Email            |\r\n+----+------------------+\r\n| 1  | john@example.com |\r\n| 2  | bob@example.com  |\r\n| 3  | john@example.com |\r\n+----+------------------+\r\nId is the primary key column for this table.\r\n</pre>\r\n\r\n<p>For example, after running your query, the above <code>Person</code> table should have the following rows:</p>\r\n\r\n<pre>\r\n+----+------------------+\r\n| Id | Email            |\r\n+----+------------------+\r\n| 1  | john@example.com |\r\n| 2  | bob@example.com  |\r\n+----+------------------+\r\n</pre>\r\n\r\n<p><strong>Note:</strong></p>\r\n\r\n<p>Your output is the whole <code>Person</code>&nbsp;table after executing your sql. Use <code>delete</code> statement.</p>\r\n",
     "code": "# Write your MySQL query statement below\ndelete p1 from Person p1, Person p2\nwhere  p2.Email = p1.Email\nand p2.Id < p1.Id",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Rising Temperature",
@@ -669,7 +669,7 @@
     "status": "ac",
     "content": "<p>Given a <code>Weather</code> table, write a SQL query to find all dates&#39; Ids with higher temperature compared to its previous (yesterday&#39;s) dates.</p>\r\n\r\n<pre>\r\n+---------+------------------+------------------+\r\n| Id(INT) | RecordDate(DATE) | Temperature(INT) |\r\n+---------+------------------+------------------+\r\n|       1 |       2015-01-01 |               10 |\r\n|       2 |       2015-01-02 |               25 |\r\n|       3 |       2015-01-03 |               20 |\r\n|       4 |       2015-01-04 |               30 |\r\n+---------+------------------+------------------+\r\n</pre>\r\n\r\n<p>For example, return the following Ids for the above <code>Weather</code> table:</p>\r\n\r\n<pre>\r\n+----+\r\n| Id |\r\n+----+\r\n|  2 |\r\n|  4 |\r\n+----+\r\n</pre>\r\n",
     "code": "# Write your MySQL query statement below\nselect w1.Id as Id\nfrom Weather w1\njoin Weather w2 \non datediff(w1.RecordDate, w2.RecordDate) = 1\nand w1.Temperature > w2.Temperature;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Trips and Users",
@@ -677,7 +677,7 @@
     "status": "ac",
     "content": "<p>The <code>Trips</code> table holds all taxi trips. Each trip has a unique Id, while Client_Id and Driver_Id are both foreign keys to the Users_Id at the <code>Users</code> table. Status is an ENUM type of (&lsquo;completed&rsquo;, &lsquo;cancelled_by_driver&rsquo;, &lsquo;cancelled_by_client&rsquo;).</p>\n\n<pre>\n+----+-----------+-----------+---------+--------------------+----------+\n| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|\n+----+-----------+-----------+---------+--------------------+----------+\n| 1  |     1     |    10     |    1    |     completed      |2013-10-01|\n| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|\n| 3  |     3     |    12     |    6    |     completed      |2013-10-01|\n| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|\n| 5  |     1     |    10     |    1    |     completed      |2013-10-02|\n| 6  |     2     |    11     |    6    |     completed      |2013-10-02|\n| 7  |     3     |    12     |    6    |     completed      |2013-10-02|\n| 8  |     2     |    12     |    12   |     completed      |2013-10-03|\n| 9  |     3     |    10     |    12   |     completed      |2013-10-03| \n| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|\n+----+-----------+-----------+---------+--------------------+----------+\n</pre>\n\n<p>The <code>Users</code> table holds all users. Each user has an unique Users_Id, and Role is an ENUM type of (&lsquo;client&rsquo;, &lsquo;driver&rsquo;, &lsquo;partner&rsquo;).</p>\n\n<pre>\n+----------+--------+--------+\n| Users_Id | Banned |  Role  |\n+----------+--------+--------+\n|    1     |   No   | client |\n|    2     |   Yes  | client |\n|    3     |   No   | client |\n|    4     |   No   | client |\n|    10    |   No   | driver |\n|    11    |   No   | driver |\n|    12    |   No   | driver |\n|    13    |   No   | driver |\n+----------+--------+--------+\n</pre>\n\n<p>Write a SQL query to find the cancellation rate of requests made by unbanned users (both client and driver must be unbanned)&nbsp;between <strong>Oct 1, 2013</strong> and <strong>Oct 3, 2013</strong>. The cancellation rate is computed by dividing the number of canceled (by client or driver) requests&nbsp;made by unbanned users by the total number of requests&nbsp;made by unbanned users.</p>\n\n<p>For the above tables, your SQL query should return the following rows with the cancellation rate being rounded to <em>two</em> decimal places.</p>\n\n<pre>\n+------------+-------------------+\n|     Day    | Cancellation Rate |\n+------------+-------------------+\n| 2013-10-01 |       0.33        |\n| 2013-10-02 |       0.00        |\n| 2013-10-03 |       0.50        |\n+------------+-------------------+\n</pre>\n\n<p><strong>Credits:</strong><br />\nSpecial thanks to <a href=\"https://leetcode.com/discuss/user/cak1erlizhou\">@cak1erlizhou</a> for contributing this question, writing the problem description and adding part of the test cases.</p>\n",
     "code": "# Write your MySQL query statement below\nselect \n    Request_at as Day,\n    round((count(IF(Trips.status != 'completed',TRUE,null))/count(*)),2) as 'Cancellation Rate'\nfrom Trips\nwhere Trips.Client_Id in (Select Users_Id from Users where Banned='No') \nand Trips.Driver_Id in (Select Users_Id from Users where Banned='No')\nand Trips.Request_at between '2013-10-01' and '2013-10-03'\ngroup by Request_at;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Big Countries",
@@ -685,7 +685,7 @@
     "status": "ac",
     "content": "<p>There is a table <code>World</code></p>\r\n\r\n<pre>\r\n+-----------------+------------+------------+--------------+---------------+\r\n| name            | continent  | area       | population   | gdp           |\r\n+-----------------+------------+------------+--------------+---------------+\r\n| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |\r\n| Albania         | Europe     | 28748      | 2831741      | 12960000      |\r\n| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |\r\n| Andorra         | Europe     | 468        | 78115        | 3712000       |\r\n| Angola          | Africa     | 1246700    | 20609294     | 100990000     |\r\n+-----------------+------------+------------+--------------+---------------+\r\n</pre>\r\n\r\n<p>A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.</p>\r\n\r\n<p>Write a SQL solution to output big countries&#39; name, population and area.</p>\r\n\r\n<p>For example, according to the above table, we should output:</p>\r\n\r\n<pre>\r\n+--------------+-------------+--------------+\r\n| name         | population  | area         |\r\n+--------------+-------------+--------------+\r\n| Afghanistan  | 25500100    | 652230       |\r\n| Algeria      | 37100000    | 2381741      |\r\n+--------------+-------------+--------------+\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n",
     "code": "# Write your MySQL query statement below\nselect name, population, area\nfrom World\nwhere area > 3000000\nor population > 25000000;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Classes More Than 5 Students",
@@ -693,7 +693,7 @@
     "status": "ac",
     "content": "<p>There is a table <code>courses</code> with columns: <b>student</b> and <b>class</b></p>\r\n\r\n<p>Please list out all classes which have more than or equal to 5 students.</p>\r\n\r\n<p>For example, the table:</p>\r\n\r\n<pre>\r\n+---------+------------+\r\n| student | class      |\r\n+---------+------------+\r\n| A       | Math       |\r\n| B       | English    |\r\n| C       | Math       |\r\n| D       | Biology    |\r\n| E       | Math       |\r\n| F       | Computer   |\r\n| G       | Math       |\r\n| H       | Math       |\r\n| I       | Math       |\r\n+---------+------------+\r\n</pre>\r\n\r\n<p>Should output:</p>\r\n\r\n<pre>\r\n+---------+\r\n| class   |\r\n+---------+\r\n| Math    |\r\n+---------+\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><b>Note:</b><br />\r\nThe students should not be counted duplicate in each course.</p>\r\n",
     "code": "SELECT\n    class\nFROM\n    courses\nGROUP BY class\nHAVING COUNT(DISTINCT student) >= 5\n;",
-    "lang": "mysql"
+    "lang": "sql"
   },
   {
     "title": "Valid Phone Numbers",
@@ -725,6 +725,6 @@
     "status": "ac",
     "content": "<p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return <em>its sum</em>.</p>\n\n<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of an array.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [-2,1,-3,4,-1,2,1,-5,4]\n<strong>Output:</strong> 6\n<strong>Explanation:</strong> [4,-1,2,1] has the largest sum = 6.\n</pre>\n\n<p><strong>Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [1]\n<strong>Output:</strong> 1\n</pre>\n\n<p><strong>Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [5,4,-1,7,8]\n<strong>Output:</strong> 23\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> If you have figured out the <code>O(n)</code> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>\n",
     "code": "func MaxInt(a, b int) int {\n    if a > b {\n        return a\n    }\n    return b\n}\n\nfunc maxSubArray(nums []int) int {\n    sum := nums[0]\n    max := nums[0]\n    for i:=1;i<len(nums);i++ {\n        sum = MaxInt(sum + nums[i], nums[i])\n        max = MaxInt(sum, max)\n        sum = MaxInt(sum, 0)\n    }\n    return max\n}",
-    "lang": "golang"
+    "lang": "go"
   }
 ]

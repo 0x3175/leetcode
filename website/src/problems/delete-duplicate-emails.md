@@ -35,8 +35,8 @@ Id is the primary key column for this table.
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 delete p1 from Person p1, Person p2
 where  p2.Email = p1.Email

@@ -45,8 +45,8 @@ sidebar_label: Maximum Subarray
 
 </div>
 
-## Solution(golang)
-```golang
+## Solution(go)
+```go
 func MaxInt(a, b int) int {
     if a > b {
         return a

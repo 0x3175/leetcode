@@ -31,8 +31,8 @@ sidebar_label: Duplicate Emails
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select Email
 from (

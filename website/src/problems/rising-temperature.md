@@ -31,8 +31,8 @@ sidebar_label: Rising Temperature
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select w1.Id as Id
 from Weather w1

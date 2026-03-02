@@ -38,8 +38,8 @@ sidebar_label: Big Countries
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select name, population, area
 from World

@@ -60,8 +60,8 @@ Special thanks to <a href="https://leetcode.com/discuss/user/cak1erlizhou">@cak1
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select 
     Request_at as Day,

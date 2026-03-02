@@ -29,8 +29,8 @@ sidebar_label: Second Highest Salary
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select (
     select distinct Salary 

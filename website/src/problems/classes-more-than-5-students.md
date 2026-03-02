@@ -44,8 +44,8 @@ The students should not be counted duplicate in each course.</p>
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 SELECT
     class
 FROM

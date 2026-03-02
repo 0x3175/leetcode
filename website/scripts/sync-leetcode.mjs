@@ -85,10 +85,32 @@ query submissionDetails($submissionId: Int!) {
 }
 `;
 
+const LANG_MAP = {
+  'javascript': 'js',
+  'python': 'python',
+  'python3': 'python',
+  'mysql': 'sql',
+  'golang': 'go',
+  'cpp': 'cpp',
+  'java': 'java',
+  'c': 'c',
+  'csharp': 'csharp',
+  'ruby': 'ruby',
+  'swift': 'swift',
+  'scala': 'scala',
+  'kotlin': 'kotlin',
+  'rust': 'rust',
+  'php': 'php',
+  'typescript': 'ts'
+};
+
 function generateNunjucks(problem, submission) {
   const frontMatter = {
     title: problem.title
   };
+
+  const langName = submission.lang.name;
+  const fenceLang = LANG_MAP[langName] || langName;
 
   return `---
 ${Object.entries(frontMatter).map(([k, v]) => `${k}: "${v.replace(/"/g, '\\"')}"`).join('\n')}
@@ -102,7 +124,7 @@ ${problem.content}
 
 <h2 id="solution">Solution (${submission.lang.verboseName || submission.lang.name})</h2>
 
-\`\`\`${submission.lang.name === 'javascript' ? 'js' : (submission.lang.name === 'python' || submission.lang.name === 'python3' ? 'python' : submission.lang.name)}
+\`\`\`${fenceLang}
 ${submission.code}
 \`\`\`
 `;

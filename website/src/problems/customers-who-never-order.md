@@ -44,8 +44,8 @@ sidebar_label: Customers Who Never Order
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select c.Name as Customers
 from Customers c

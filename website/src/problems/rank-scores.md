@@ -37,8 +37,8 @@ sidebar_label: Rank Scores
 
 </div>
 
-## Solution(mysql)
-```mysql
+## Solution(sql)
+```sql
 # Write your MySQL query statement below
 select Score,
     (select count(distinct Score) from Scores where Score >= s.Score) as Rank
