@@ -3,25 +3,23 @@ layout: layout.njk
 title: Solutions
 ---
 
-<h1>Problem Solutions</h1>
-
-<div class="problems-list">
-  {% for problem in collections.problems %}
-    <div class="problem-card">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-        <h2 style="margin: 0; font-size: 1.25rem;">
-          <a href="{{ problem.url | url }}" style="color: var(--accent-color);">{{ problem.data.title }}</a>
-        </h2>
-      </div>
-      <div style="font-size: 0.9rem; color: #8b949e;">
-        {% for tag in problem.data.tags %}
-          {% if tag != "problems" %}
-            <span style="margin-right: 1rem;">#{{ tag }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
+<div class="welcome-card">
+  <div style="margin-top: 2rem; display: flex; gap: 2rem;">
+    <div class="stat">
+      <span style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">{{ collections.problems.length }}</span>
+      <p style="margin: 0; color: #8b949e;">Problems Solved</p>
     </div>
-  {% else %}
-    <p>No problems found. Run the sync script to generate content!</p>
-  {% endfor %}
+  </div>
+
+  <div class="mobile-problems">
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+    <h3>All Problems</h3>
+    <ul style="list-style: none; padding: 0;">
+      {% for problem in collections.problems | sort(false, false, 'data.title') %}
+      <li style="margin-bottom: 0.5rem;">
+        <a href="{{ problem.url | url }}">{{ problem.data.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

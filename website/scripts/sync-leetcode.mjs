@@ -77,7 +77,6 @@ query submissionDetails($submissionId: Int!) {
       title
       titleSlug
       content
-      difficulty
       topicTags {
         name
       }
@@ -119,7 +118,7 @@ async function main() {
       if (fs.existsSync(filePath)) continue;
 
       const content = generateNunjucks(
-        { title: p.title, titleSlug: p.titleSlug, content: p.content, difficulty: '', topicTags: [] },
+        { title: p.title, titleSlug: p.titleSlug, content: p.content, topicTags: [] },
         { code: p.code, lang: { name: p.lang === 'ac' ? 'js' : (p.lang || 'js') } }
       );
       fs.writeFileSync(filePath, content);

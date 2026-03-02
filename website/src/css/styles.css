@@ -15,6 +15,11 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: var(--bg-color);
+  overscroll-behavior: none;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -22,6 +27,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  overscroll-behavior: none;
 }
 
 /* Header */
@@ -129,7 +135,7 @@ nav a:hover {
 .main-content {
   flex: 1;
   padding: 40px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -155,41 +161,6 @@ a:hover {
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-}
-
-/* Table of Contents (Right) */
-.toc {
-  width: 250px;
-  padding: 40px 20px;
-  position: sticky;
-  top: 60px;
-  height: calc(100vh - 60px);
-  font-size: 13px;
-}
-
-.toc h4 {
-  margin: 0 0 10px;
-  color: #6A737D;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.toc ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-left: 1px solid var(--border-color);
-}
-
-.toc li a {
-  display: block;
-  padding: 5px 15px;
-  color: #6A737D;
-  text-decoration: none;
-}
-
-.toc li a:hover {
-  color: var(--primary-color);
 }
 
 /* Badges */
@@ -228,7 +199,6 @@ footer {
   background-color: var(--footer-bg);
   color: #8b949e;
   padding: 3rem 0;
-  margin-top: 3rem;
 }
 
 footer .container {
@@ -239,8 +209,16 @@ footer .container {
   justify-content: space-between;
 }
 
+/* Mobile Problems List (Homepage) */
+.mobile-problems {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 1000px) {
+  .mobile-problems {
+    display: block;
+  }
 
   .sidebar,
   .toc {
