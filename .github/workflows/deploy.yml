@@ -36,7 +36,9 @@ jobs:
         working-directory: website
 
       - name: Build website
-        run: npx @11ty/eleventy
+        run: |
+          npx @11ty/eleventy
+          [ -d "_site" ] && ls -R _site || echo "_site directory not found!"
         working-directory: website
 
       - name: Deploy to GitHub Pages
