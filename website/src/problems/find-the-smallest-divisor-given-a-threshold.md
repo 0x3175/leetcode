@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Find the Smallest Divisor Given a Threshold"
-difficulty: ""
-tags: 
-  - problems
+id: find-the-smallest-divisor-given-a-threshold
+title: Find the Smallest Divisor Given a Threshold
+sidebar_label: Find the Smallest Divisor Given a Threshold
 ---
-
-# Find the Smallest Divisor Given a Threshold
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an array of integers <code>nums</code> and an integer <code>threshold</code>, we will choose a positive integer divisor and&nbsp;divide&nbsp;all the array by it and sum the result of the division. Find the <strong>smallest</strong> divisor such that the result mentioned above is less than&nbsp;or equal to <code>threshold</code>.</p>
 
@@ -57,9 +45,8 @@ If the divisor is 4 we can get a sum to 7 (1+1+2+3) and if the divisor is 5 the 
 </ul>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @param {number} threshold

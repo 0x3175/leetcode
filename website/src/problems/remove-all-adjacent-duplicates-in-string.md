@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Remove All Adjacent Duplicates In String"
-difficulty: ""
-tags: 
-  - problems
+id: remove-all-adjacent-duplicates-in-string
+title: Remove All Adjacent Duplicates In String
+sidebar_label: Remove All Adjacent Duplicates In String
 ---
-
-# Remove All Adjacent Duplicates In String
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a string <code>S</code> of lowercase letters, a <em>duplicate removal</em> consists of choosing two adjacent and equal letters, and removing&nbsp;them.</p>
 
@@ -44,9 +32,8 @@ For example, in &quot;abbaca&quot; we could remove &quot;bb&quot; since the lett
 </ol>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} S
  * @return {string}

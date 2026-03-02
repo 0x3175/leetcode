@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Jump Game II"
-difficulty: ""
-tags: 
-  - problems
+id: jump-game-ii
+title: Jump Game II
+sidebar_label: Jump Game II
 ---
-
-# Jump Game II
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p>
 
@@ -37,9 +25,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @return {number}

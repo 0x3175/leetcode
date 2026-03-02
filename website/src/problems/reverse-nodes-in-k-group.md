@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Reverse Nodes in k-Group"
-difficulty: ""
-tags: 
-  - problems
+id: reverse-nodes-in-k-group
+title: Reverse Nodes in k-Group
+sidebar_label: Reverse Nodes in k-Group
 ---
-
-# Reverse Nodes in k-Group
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a linked list, reverse the nodes of a linked list <em>k</em> at a time and return its modified list.</p>
 
@@ -41,9 +29,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {

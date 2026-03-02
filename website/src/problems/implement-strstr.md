@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Implement strStr()"
-difficulty: ""
-tags: 
-  - problems
+id: implement-strstr
+title: Implement strStr()
+sidebar_label: Implement strStr()
 ---
-
-# Implement strStr()
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Implement <a href="http://www.cplusplus.com/reference/cstring/strstr/" target="_blank">strStr()</a>.</p>
 
@@ -43,9 +31,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} haystack
  * @param {string} needle

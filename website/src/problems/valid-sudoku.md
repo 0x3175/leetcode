@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Valid Sudoku"
-difficulty: ""
-tags: 
-  - problems
+id: valid-sudoku
+title: Valid Sudoku
+sidebar_label: Valid Sudoku
 ---
-
-# Valid Sudoku
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Determine if a&nbsp;9x9 Sudoku board&nbsp;is valid.&nbsp;Only the filled cells need to be validated&nbsp;<strong>according to the following rules</strong>:</p>
 
@@ -79,9 +67,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {character[][]} board
  * @return {boolean}

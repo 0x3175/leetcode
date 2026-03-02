@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Count Servers that Communicate"
-difficulty: ""
-tags: 
-  - problems
+id: count-servers-that-communicate
+title: Count Servers that Communicate
+sidebar_label: Count Servers that Communicate
 ---
-
-# Count Servers that Communicate
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>You are given a map of a server center, represented as a <code>m * n</code> integer matrix&nbsp;<code>grid</code>, where 1 means that on that cell there is a server and 0 means that it is no server. Two servers are said to communicate if they are on the same row or on the same column.<br />
 <br />
@@ -64,9 +52,8 @@ Return the number of servers&nbsp;that communicate with any other server.</p>
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[][]} grid
  * @return {number}

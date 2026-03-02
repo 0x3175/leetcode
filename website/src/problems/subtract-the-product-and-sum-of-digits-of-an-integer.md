@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Subtract the Product and Sum of Digits of an Integer"
-difficulty: ""
-tags: 
-  - problems
+id: subtract-the-product-and-sum-of-digits-of-an-integer
+title: Subtract the Product and Sum of Digits of an Integer
+sidebar_label: Subtract the Product and Sum of Digits of an Integer
 ---
-
-# Subtract the Product and Sum of Digits of an Integer
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 Given an integer number <code>n</code>, return the difference between the product of its digits and the sum of its digits.
 <p>&nbsp;</p>
@@ -50,9 +38,8 @@ Result = 32 - 11 = 21
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number} n
  * @return {number}

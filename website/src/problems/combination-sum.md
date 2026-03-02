@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Combination Sum"
-difficulty: ""
-tags: 
-  - problems
+id: combination-sum
+title: Combination Sum
+sidebar_label: Combination Sum
 ---
-
-# Combination Sum
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a <strong>set</strong> of candidate numbers (<code>candidates</code>) <strong>(without duplicates)</strong> and a target number (<code>target</code>), find all unique combinations in <code>candidates</code>&nbsp;where the candidate numbers sums to <code>target</code>.</p>
 
@@ -53,9 +41,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} candidates
  * @param {number} target

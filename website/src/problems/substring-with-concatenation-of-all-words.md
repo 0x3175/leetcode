@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Substring with Concatenation of All Words"
-difficulty: ""
-tags: 
-  - problems
+id: substring-with-concatenation-of-all-words
+title: Substring with Concatenation of All Words
+sidebar_label: Substring with Concatenation of All Words
 ---
-
-# Substring with Concatenation of All Words
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>You are given a string, <strong>s</strong>, and a list of words, <strong>words</strong>, that are all of the same length. Find all starting indices of substring(s) in <strong>s</strong> that is a concatenation of each word in <strong>words</strong> exactly once and without any intervening characters.</p>
 
@@ -43,9 +31,8 @@ The output order does not matter, returning [9,0] is fine too.
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} s
  * @param {string[]} words

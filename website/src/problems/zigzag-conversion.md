@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "ZigZag Conversion"
-difficulty: ""
-tags: 
-  - problems
+id: zigzag-conversion
+title: ZigZag Conversion
+sidebar_label: ZigZag Conversion
 ---
-
-# ZigZag Conversion
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
 
@@ -53,9 +41,8 @@ P     I</pre>
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} s
  * @param {number} numRows

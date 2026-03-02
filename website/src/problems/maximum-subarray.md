@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Maximum Subarray"
-difficulty: ""
-tags: 
-  - problems
+id: maximum-subarray
+title: Maximum Subarray
+sidebar_label: Maximum Subarray
 ---
-
-# Maximum Subarray
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return <em>its sum</em>.</p>
 
@@ -57,8 +45,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (golang)</h2>
-
+## Solution(golang)
 ```golang
 func MaxInt(a, b int) int {
     if a > b {

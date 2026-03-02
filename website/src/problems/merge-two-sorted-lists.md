@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Merge Two Sorted Lists"
-difficulty: ""
-tags: 
-  - problems
+id: merge-two-sorted-lists
+title: Merge Two Sorted Lists
+sidebar_label: Merge Two Sorted Lists
 ---
-
-# Merge Two Sorted Lists
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
 
@@ -27,9 +15,8 @@ tags:
 </p>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {

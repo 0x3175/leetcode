@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Wildcard Matching"
-difficulty: ""
-tags: 
-  - problems
+id: wildcard-matching
+title: Wildcard Matching
+sidebar_label: Wildcard Matching
 ---
-
-# Wildcard Matching
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an input string (<code>s</code>) and a pattern (<code>p</code>), implement wildcard pattern matching with support for <code>&#39;?&#39;</code> and <code>&#39;*&#39;</code>.</p>
 
@@ -84,9 +72,8 @@ p = &quot;a*c?b&quot;
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} s
  * @param {string} p

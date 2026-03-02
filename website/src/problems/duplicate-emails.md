@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Duplicate Emails"
-difficulty: ""
-tags: 
-  - problems
+id: duplicate-emails
+title: Duplicate Emails
+sidebar_label: Duplicate Emails
 ---
-
-# Duplicate Emails
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Write a SQL query to find all duplicate emails in a table named <code>Person</code>.</p>
 
@@ -43,8 +31,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 # Write your MySQL query statement below
 select Email

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Valid Phone Numbers"
-difficulty: ""
-tags: 
-  - problems
+id: valid-phone-numbers
+title: Valid Phone Numbers
+sidebar_label: Valid Phone Numbers
 ---
-
-# Valid Phone Numbers
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a text file <code>file.txt</code> that contains list of phone numbers (one per line), write a one liner bash script to print all valid phone numbers.</p>
 
@@ -42,8 +30,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (bash)</h2>
-
+## Solution(bash)
 ```bash
 # Read from the file file.txt and output all valid phone numbers to stdout.
 grep -P '^(\d{3}-|\(\d{3}\) )\d{3}-\d{4}$' file.txt

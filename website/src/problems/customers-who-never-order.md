@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Customers Who Never Order"
-difficulty: ""
-tags: 
-  - problems
+id: customers-who-never-order
+title: Customers Who Never Order
+sidebar_label: Customers Who Never Order
 ---
-
-# Customers Who Never Order
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Suppose that a website contains two tables, the <code>Customers</code> table and the <code>Orders</code> table. Write a SQL query to find all customers who never order anything.</p>
 
@@ -56,8 +44,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 # Write your MySQL query statement below
 select c.Name as Customers

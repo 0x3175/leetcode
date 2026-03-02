@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Regular Expression Matching"
-difficulty: ""
-tags: 
-  - problems
+id: regular-expression-matching
+title: Regular Expression Matching
+sidebar_label: Regular Expression Matching
 ---
-
-# Regular Expression Matching
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an input string (<code>s</code>) and a pattern (<code>p</code>), implement regular expression matching with support for <code>&#39;.&#39;</code> and <code>&#39;*&#39;</code>.</p>
 
@@ -84,9 +72,8 @@ p = &quot;mis*is*p*.&quot;
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} s
  * @param {string} p

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Rising Temperature"
-difficulty: ""
-tags: 
-  - problems
+id: rising-temperature
+title: Rising Temperature
+sidebar_label: Rising Temperature
 ---
-
-# Rising Temperature
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a <code>Weather</code> table, write a SQL query to find all dates&#39; Ids with higher temperature compared to its previous (yesterday&#39;s) dates.</p>
 
@@ -43,8 +31,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 # Write your MySQL query statement below
 select w1.Id as Id

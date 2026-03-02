@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Longest Palindromic Substring"
-difficulty: ""
-tags: 
-  - problems
+id: longest-palindromic-substring
+title: Longest Palindromic Substring
+sidebar_label: Longest Palindromic Substring
 ---
-
-# Longest Palindromic Substring
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a string <strong>s</strong>, find the longest palindromic substring in <strong>s</strong>. You may assume that the maximum length of <strong>s</strong> is 1000.</p>
 
@@ -36,9 +24,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} s
  * @return {string}

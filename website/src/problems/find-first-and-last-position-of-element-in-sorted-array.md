@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Find First and Last Position of Element in Sorted Array"
-difficulty: ""
-tags: 
-  - problems
+id: find-first-and-last-position-of-element-in-sorted-array
+title: Find First and Last Position of Element in Sorted Array
+sidebar_label: Find First and Last Position of Element in Sorted Array
 ---
-
-# Find First and Last Position of Element in Sorted Array
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an array of integers <code>nums</code> sorted in ascending order, find the starting and ending position of a given <code>target</code> value.</p>
 
@@ -37,9 +25,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @param {number} target

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Design HashSet"
-difficulty: ""
-tags: 
-  - problems
+id: design-hashset
+title: Design HashSet
+sidebar_label: Design HashSet
 ---
-
-# Design HashSet
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Design a HashSet&nbsp;without using any built-in hash table libraries.</p>
 
@@ -53,9 +41,8 @@ hashSet.contains(2); &nbsp;&nbsp;&nbsp;// returns false (already removed)
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * Initialize your data structure here.
  */

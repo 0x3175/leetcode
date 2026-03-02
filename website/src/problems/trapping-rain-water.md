@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Trapping Rain Water"
-difficulty: ""
-tags: 
-  - problems
+id: trapping-rain-water
+title: Trapping Rain Water
+sidebar_label: Trapping Rain Water
 ---
-
-# Trapping Rain Water
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given <em>n</em> non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
 
@@ -30,9 +18,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} height
  * @return {number}

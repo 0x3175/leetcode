@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Remove Comments"
-difficulty: ""
-tags: 
-  - problems
+id: remove-comments
+title: Remove Comments
+sidebar_label: Remove Comments
 ---
-
-# Remove Comments
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a C++ program, remove comments from it. The program <code>source</code> is an array where <code>source[i]</code> is the <code>i</code>-th line of the source code.  This represents the result of splitting the original source code string by the newline character <code>\n</code>.</p>
 
@@ -88,9 +76,8 @@ source = ["a/*comment", "line", "more_comment*/b"]
 </p>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 var removeComments = function(source) {
     var code = source.join("\n");
     var i = 0;

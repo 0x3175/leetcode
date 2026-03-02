@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Maximum Length of Pair Chain"
-difficulty: ""
-tags: 
-  - problems
+id: maximum-length-of-pair-chain
+title: Maximum Length of Pair Chain
+sidebar_label: Maximum Length of Pair Chain
 ---
-
-# Maximum Length of Pair Chain
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>
 You are given <code>n</code> pairs of numbers. In every pair, the first number is always smaller than the second number.
@@ -45,9 +33,8 @@ Given a set of pairs, find the length longest chain which can be formed. You nee
 </p>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[][]} pairs
  * @return {number}

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Multiply Strings"
-difficulty: ""
-tags: 
-  - problems
+id: multiply-strings
+title: Multiply Strings
+sidebar_label: Multiply Strings
 ---
-
-# Multiply Strings
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given two non-negative integers <code>num1</code> and <code>num2</code> represented as strings, return the product of <code>num1</code> and <code>num2</code>, also represented as a string.</p>
 
@@ -43,9 +31,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} num1
  * @param {string} num2

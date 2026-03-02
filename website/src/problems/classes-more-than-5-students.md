@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Classes More Than 5 Students"
-difficulty: ""
-tags: 
-  - problems
+id: classes-more-than-5-students
+title: Classes More Than 5 Students
+sidebar_label: Classes More Than 5 Students
 ---
-
-# Classes More Than 5 Students
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>There is a table <code>courses</code> with columns: <b>student</b> and <b>class</b></p>
 
@@ -56,8 +44,7 @@ The students should not be counted duplicate in each course.</p>
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 SELECT
     class

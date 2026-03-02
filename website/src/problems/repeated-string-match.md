@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Repeated String Match"
-difficulty: ""
-tags: 
-  - problems
+id: repeated-string-match
+title: Repeated String Match
+sidebar_label: Repeated String Match
 ---
-
-# Repeated String Match
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given two strings A and B, find the minimum number of times A has to be repeated such that B is a substring of it. If no such solution, return -1.</p>
 
@@ -28,9 +16,8 @@ The length of <code>A</code> and <code>B</code> will be between 1 and 10000.</p>
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} A
  * @param {string} B

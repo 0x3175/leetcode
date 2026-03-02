@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "First Missing Positive"
-difficulty: ""
-tags: 
-  - problems
+id: first-missing-positive
+title: First Missing Positive
+sidebar_label: First Missing Positive
 ---
-
-# First Missing Positive
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an unsorted integer array, find the smallest missing&nbsp;positive integer.</p>
 
@@ -46,9 +34,8 @@ Output: 1
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @return {number}

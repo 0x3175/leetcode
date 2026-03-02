@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Remove Duplicates from Sorted Array"
-difficulty: ""
-tags: 
-  - problems
+id: remove-duplicates-from-sorted-array
+title: Remove Duplicates from Sorted Array
+sidebar_label: Remove Duplicates from Sorted Array
 ---
-
-# Remove Duplicates from Sorted Array
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a sorted array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
 
@@ -59,9 +47,8 @@ for (int i = 0; i &lt; len; i++) {
 }</pre>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @return {number}

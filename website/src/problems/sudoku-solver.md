@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Sudoku Solver"
-difficulty: ""
-tags: 
-  - problems
+id: sudoku-solver
+title: Sudoku Solver
+sidebar_label: Sudoku Solver
 ---
-
-# Sudoku Solver
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Write a program to solve a Sudoku puzzle by filling the empty cells.</p>
 
@@ -45,9 +33,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {character[][]} board
  * @return {void} Do not return anything, modify board in-place instead.

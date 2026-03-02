@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Roman to Integer"
-difficulty: ""
-tags: 
-  - problems
+id: roman-to-integer
+title: Roman to Integer
+sidebar_label: Roman to Integer
 ---
-
-# Roman to Integer
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
 
@@ -76,9 +64,8 @@ M             1000</pre>
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string} s
  * @return {number}

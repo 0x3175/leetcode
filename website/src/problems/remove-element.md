@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Remove Element"
-difficulty: ""
-tags: 
-  - problems
+id: remove-element
+title: Remove Element
+sidebar_label: Remove Element
 ---
-
-# Remove Element
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> and return the new length.</p>
 
@@ -63,9 +51,8 @@ for (int i = 0; i &lt; len; i++) {
 }</pre>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @param {number} val

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Swap Nodes in Pairs"
-difficulty: ""
-tags: 
-  - problems
+id: swap-nodes-in-pairs
+title: Swap Nodes in Pairs
+sidebar_label: Swap Nodes in Pairs
 ---
-
-# Swap Nodes in Pairs
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a&nbsp;linked list, swap every two adjacent nodes and return its head.</p>
 
@@ -31,9 +19,8 @@ Given <code>1-&gt;2-&gt;3-&gt;4</code>, you should return the list as <code>2-&g
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {

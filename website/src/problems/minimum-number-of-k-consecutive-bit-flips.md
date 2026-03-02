@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Minimum Number of K Consecutive Bit Flips"
-difficulty: ""
-tags: 
-  - problems
+id: minimum-number-of-k-consecutive-bit-flips
+title: Minimum Number of K Consecutive Bit Flips
+sidebar_label: Minimum Number of K Consecutive Bit Flips
 ---
-
-# Minimum Number of K Consecutive Bit Flips
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>In an array <code>A</code> containing only 0s and 1s, a <i><code>K</code>-bit flip&nbsp;</i>consists of choosing a (contiguous) subarray of length <code>K</code> and simultaneously changing every 0 in the subarray to 1, and every 1 in the subarray to 0.</p>
 
@@ -64,9 +52,8 @@ Flip A[5],A[6],A[7]:&nbsp;A becomes [1,1,1,1,1,1,1,1]
 </ol>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} A
  * @param {number} K

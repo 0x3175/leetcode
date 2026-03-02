@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Unique Number of Occurrences"
-difficulty: ""
-tags: 
-  - problems
+id: unique-number-of-occurrences
+title: Unique Number of Occurrences
+sidebar_label: Unique Number of Occurrences
 ---
-
-# Unique Number of Occurrences
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an array of integers <code>arr</code>,&nbsp;write a function that returns <code>true</code> if and only if the number of occurrences of each value in the array is unique.</p>
 
@@ -51,9 +39,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} arr
  * @return {boolean}

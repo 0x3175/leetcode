@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Split Linked List in Parts"
-difficulty: ""
-tags: 
-  - problems
+id: split-linked-list-in-parts
+title: Split Linked List in Parts
+sidebar_label: Split Linked List in Parts
 ---
-
-# Split Linked List in Parts
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a (singly) linked list with head node <code>root</code>, write a function to split the linked list into <code>k</code> consecutive linked list "parts".
 </p><p>
@@ -64,9 +52,8 @@ The input has been split into consecutive parts with size difference at most 1, 
 </p>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {

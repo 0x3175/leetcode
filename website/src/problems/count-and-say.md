@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Count and Say"
-difficulty: ""
-tags: 
-  - problems
+id: count-and-say
+title: Count and Say
+sidebar_label: Count and Say
 ---
-
-# Count and Say
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>The count-and-say sequence is the sequence of integers with the first five terms as following:</p>
 
@@ -55,9 +43,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number} n
  * @return {string}

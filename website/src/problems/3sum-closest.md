@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "3Sum Closest"
-difficulty: ""
-tags: 
-  - problems
+id: 3sum-closest
+title: 3Sum Closest
+sidebar_label: 3Sum Closest
 ---
-
-# 3Sum Closest
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, find three integers in <code>nums</code>&nbsp;such that the sum is closest to&nbsp;<code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 
@@ -29,9 +17,8 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @param {number} target

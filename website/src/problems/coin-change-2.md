@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Coin Change 2"
-difficulty: ""
-tags: 
-  - problems
+id: coin-change-2
+title: Coin Change 2
+sidebar_label: Coin Change 2
 ---
-
-# Coin Change 2
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>You are given coins of different denominations and a total amount of money. Write a function to compute the number of combinations that make up that amount. You may assume that you have infinite number of each kind of coin.</p>
 
@@ -66,9 +54,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 // Algorithm explanation: https://youtu.be/jaNZ83Q3QGc
 
 /**

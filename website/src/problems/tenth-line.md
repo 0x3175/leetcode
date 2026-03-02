@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Tenth Line"
-difficulty: ""
-tags: 
-  - problems
+id: tenth-line
+title: Tenth Line
+sidebar_label: Tenth Line
 ---
-
-# Tenth Line
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a text file&nbsp;<code>file.txt</code>, print&nbsp;just the 10th line of the&nbsp;file.</p>
 
@@ -48,8 +36,7 @@ Line 10
 
 </div>
 
-<h2 id="solution">Solution (bash)</h2>
-
+## Solution(bash)
 ```bash
 # Read from the file file.txt and output the tenth line to stdout.
 tail -n+10 file.txt | head -1

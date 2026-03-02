@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Reverse Integer"
-difficulty: ""
-tags: 
-  - problems
+id: reverse-integer
+title: Reverse Integer
+sidebar_label: Reverse Integer
 ---
-
-# Reverse Integer
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a 32-bit signed integer, reverse digits of an integer.</p>
 
@@ -45,9 +33,8 @@ Assume we are dealing with an environment which could only store integers within
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number} x
  * @return {number}

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Generate Parentheses"
-difficulty: ""
-tags: 
-  - problems
+id: generate-parentheses
+title: Generate Parentheses
+sidebar_label: Generate Parentheses
 ---
-
-# Generate Parentheses
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>
 Given <i>n</i> pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -35,9 +23,8 @@ For example, given <i>n</i> = 3, a solution set is:
 </pre>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number} n
  * @return {string[]}

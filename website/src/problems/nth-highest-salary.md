@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Nth Highest Salary"
-difficulty: ""
-tags: 
-  - problems
+id: nth-highest-salary
+title: Nth Highest Salary
+sidebar_label: Nth Highest Salary
 ---
-
-# Nth Highest Salary
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Write a SQL query to get the <em>n</em><sup>th</sup> highest salary from the <code>Employee</code> table.</p>
 
@@ -41,8 +29,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN

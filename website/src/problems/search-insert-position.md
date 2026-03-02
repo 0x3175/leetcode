@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Search Insert Position"
-difficulty: ""
-tags: 
-  - problems
+id: search-insert-position
+title: Search Insert Position
+sidebar_label: Search Insert Position
 ---
-
-# Search Insert Position
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
 
@@ -51,9 +39,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @param {number} target

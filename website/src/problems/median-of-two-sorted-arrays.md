@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Median of Two Sorted Arrays"
-difficulty: ""
-tags: 
-  - problems
+id: median-of-two-sorted-arrays
+title: Median of Two Sorted Arrays
+sidebar_label: Median of Two Sorted Arrays
 ---
-
-# Median of Two Sorted Arrays
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>There are two sorted arrays <b>nums1</b> and <b>nums2</b> of size m and n respectively.</p>
 
@@ -43,9 +31,8 @@ The median is (2 + 3)/2 = 2.5
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums1
  * @param {number[]} nums2

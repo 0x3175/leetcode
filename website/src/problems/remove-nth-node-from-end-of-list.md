@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Remove Nth Node From End of List"
-difficulty: ""
-tags: 
-  - problems
+id: remove-nth-node-from-end-of-list
+title: Remove Nth Node From End of List
+sidebar_label: Remove Nth Node From End of List
 ---
-
-# Remove Nth Node From End of List
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a linked list, remove the <em>n</em>-th node from the end of list and return its head.</p>
 
@@ -37,9 +25,8 @@ After removing the second node from the end, the linked list becomes <strong>1-&
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {

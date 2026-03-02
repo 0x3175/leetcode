@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Permutations"
-difficulty: ""
-tags: 
-  - problems
+id: permutations
+title: Permutations
+sidebar_label: Permutations
 ---
-
-# Permutations
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a collection of <strong>distinct</strong> integers, return all possible permutations.</p>
 
@@ -36,9 +24,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[]} nums
  * @return {number[][]}

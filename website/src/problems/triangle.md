@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Triangle"
-difficulty: ""
-tags: 
-  - problems
+id: triangle
+title: Triangle
+sidebar_label: Triangle
 ---
-
-# Triangle
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.</p>
 
@@ -38,9 +26,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number[][]} triangle
  * @return {number}

@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Big Countries"
-difficulty: ""
-tags: 
-  - problems
+id: big-countries
+title: Big Countries
+sidebar_label: Big Countries
 ---
-
-# Big Countries
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>There is a table <code>World</code></p>
 
@@ -50,8 +38,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 # Write your MySQL query statement below
 select name, population, area

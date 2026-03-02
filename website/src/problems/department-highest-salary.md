@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Department Highest Salary"
-difficulty: ""
-tags: 
-  - problems
+id: department-highest-salary
+title: Department Highest Salary
+sidebar_label: Department Highest Salary
 ---
-
-# Department Highest Salary
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>The <code>Employee</code> table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.</p>
 
@@ -60,8 +48,7 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 # Write your MySQL query statement below
 select 

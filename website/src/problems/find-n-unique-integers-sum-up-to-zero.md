@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Find N Unique Integers Sum up to Zero"
-difficulty: ""
-tags: 
-  - problems
+id: find-n-unique-integers-sum-up-to-zero
+title: Find N Unique Integers Sum up to Zero
+sidebar_label: Find N Unique Integers Sum up to Zero
 ---
-
-# Find N Unique Integers Sum up to Zero
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given an integer <code>n</code>, return <strong>any</strong> array containing <code>n</code> <strong>unique</strong>&nbsp;integers such that they add up to 0.</p>
 
@@ -50,9 +38,8 @@ tags:
 </ul>
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {number} n
  * @return {number[]}

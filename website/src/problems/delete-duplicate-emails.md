@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Delete Duplicate Emails"
-difficulty: ""
-tags: 
-  - problems
+id: delete-duplicate-emails
+title: Delete Duplicate Emails
+sidebar_label: Delete Duplicate Emails
 ---
-
-# Delete Duplicate Emails
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Write a SQL query to <strong>delete</strong> all duplicate email entries in a table named <code>Person</code>, keeping only unique emails based on its <i>smallest</i> <b>Id</b>.</p>
 
@@ -47,8 +35,7 @@ Id is the primary key column for this table.
 
 </div>
 
-<h2 id="solution">Solution (mysql)</h2>
-
+## Solution(mysql)
 ```mysql
 # Write your MySQL query statement below
 delete p1 from Person p1, Person p2

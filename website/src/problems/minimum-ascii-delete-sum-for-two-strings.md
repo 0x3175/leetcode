@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Minimum ASCII Delete Sum for Two Strings"
-difficulty: ""
-tags: 
-  - problems
+id: minimum-ascii-delete-sum-for-two-strings
+title: Minimum ASCII Delete Sum for Two Strings
+sidebar_label: Minimum ASCII Delete Sum for Two Strings
 ---
-
-# Minimum ASCII Delete Sum for Two Strings
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Given two strings <code>s1, s2</code>, find the lowest ASCII sum of deleted characters to make two strings equal.</p>
 
@@ -46,8 +34,7 @@ If instead we turned both strings into "lee" or "eet", we would get answers of 4
 </p>
 </div>
 
-<h2 id="solution">Solution (python)</h2>
-
+## Solution(python)
 ```python
 class Solution(object):
     def minimumDeleteSum(self, s1, s2):

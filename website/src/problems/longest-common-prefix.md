@@ -1,21 +1,9 @@
 ---
-layout: "layout.njk"
-title: "Longest Common Prefix"
-difficulty: ""
-tags: 
-  - problems
+id: longest-common-prefix
+title: Longest Common Prefix
+sidebar_label: Longest Common Prefix
 ---
-
-# Longest Common Prefix
-
-{% if difficulty and difficulty != "" %}
-<div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
-  {{ difficulty }}
-</div>
-{% endif %}
-
-<h2 id="problem-description">Problem Description</h2>
-
+## Description
 <div class="description">
 <p>Write a function to find the longest common prefix string amongst an array of strings.</p>
 
@@ -42,9 +30,8 @@ tags:
 
 </div>
 
-<h2 id="solution">Solution (javascript)</h2>
-
-```js
+## Solution(javascript)
+```javascript
 /**
  * @param {string[]} strs
  * @return {string}
