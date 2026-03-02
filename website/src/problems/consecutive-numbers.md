@@ -1,16 +1,18 @@
 ---
 layout: "layout.njk"
 title: "Consecutive Numbers"
-difficulty: "Migrated"
+difficulty: ""
 tags: 
   - problems
 ---
 
 # Consecutive Numbers
 
+{% if difficulty and difficulty != "" %}
 <div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
   {{ difficulty }}
 </div>
+{% endif %}
 
 <h2 id="problem-description">Problem Description</h2>
 

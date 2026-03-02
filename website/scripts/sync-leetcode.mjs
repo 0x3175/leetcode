@@ -101,9 +101,11 @@ ${Object.entries(frontMatter).map(([k, v]) => `${k}: ${Array.isArray(v) ? `\n${v
 
 # ${problem.title}
 
+{% if difficulty and difficulty != "" %}
 <div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
   {{ difficulty }}
 </div>
+{% endif %}
 
 <h2 id="problem-description">Problem Description</h2>
 
@@ -129,7 +131,7 @@ async function main() {
             if (fs.existsSync(filePath)) continue;
 
             const content = generateNunjucks(
-                { title: p.title, titleSlug: p.titleSlug, content: p.content, difficulty: 'Migrated', topicTags: [] },
+                { title: p.title, titleSlug: p.titleSlug, content: p.content, difficulty: '', topicTags: [] },
                 { code: p.code, lang: { name: p.lang === 'ac' ? 'js' : (p.lang || 'js') } }
             );
             fs.writeFileSync(filePath, content);

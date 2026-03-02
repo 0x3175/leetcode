@@ -1,16 +1,18 @@
 ---
 layout: "layout.njk"
 title: "Jump Game II"
-difficulty: "Migrated"
+difficulty: ""
 tags: 
   - problems
 ---
 
 # Jump Game II
 
+{% if difficulty and difficulty != "" %}
 <div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
   {{ difficulty }}
 </div>
+{% endif %}
 
 <h2 id="problem-description">Problem Description</h2>
 

@@ -1,16 +1,18 @@
 ---
 layout: "layout.njk"
 title: "Merge Two Sorted Lists"
-difficulty: "Migrated"
+difficulty: ""
 tags: 
   - problems
 ---
 
 # Merge Two Sorted Lists
 
+{% if difficulty and difficulty != "" %}
 <div class="badge" style="background-color: {{ difficulty | difficultyColor }}22; color: {{ difficulty | difficultyColor }}; border: 1px solid {{ difficulty | difficultyColor }}44;">
   {{ difficulty }}
 </div>
+{% endif %}
 
 <h2 id="problem-description">Problem Description</h2>
 
