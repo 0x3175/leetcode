@@ -6,6 +6,10 @@ on:
       - master # Adjust this to your main branch name if different
     paths:
       - 'website/**'
+  workflow_run:
+    workflows: ["Sync LeetCode"]
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
