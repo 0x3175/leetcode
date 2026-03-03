@@ -26,7 +26,6 @@ A modern, high-performance static website displaying LeetCode solutions, built w
 
 2.  **Install dependencies**:
     ```bash
-    cd website
     npm install
     ```
 
@@ -41,7 +40,7 @@ A modern, high-performance static website displaying LeetCode solutions, built w
 To manually trigger a sync of your latest LeetCode solutions:
 ```bash
 # Requires LEETCODE_SESSION and LEETCODE_CSRF_TOKEN env variables
-node website/scripts/sync-leetcode.mjs
+node scripts/sync-leetcode.mjs
 ```
 
 ## Automation Setup
