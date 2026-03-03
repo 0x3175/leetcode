@@ -6,6 +6,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Load .env if it exists (Node 20.12.0+ / 21.7.0+)
+if (fs.existsSync('.env') && typeof process.loadEnvFile === 'function') {
+  process.loadEnvFile();
+}
+
 const LEETCODE_SESSION = process.env.LEETCODE_SESSION;
 const LEETCODE_CSRF_TOKEN = process.env.LEETCODE_CSRF_TOKEN;
 const COOKIES = `LEETCODE_SESSION=${LEETCODE_SESSION}; csrftoken=${LEETCODE_CSRF_TOKEN}`;
@@ -106,7 +111,9 @@ const LANG_MAP = {
 
 function generateNunjucks(problem, submission) {
   const frontMatter = {
-    title: problem.title
+    id: problem.titleSlug,
+    title: problem.title,
+    lang: submission.lang.name
   };
 
   const langName = submission.lang.name;

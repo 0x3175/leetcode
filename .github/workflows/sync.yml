@@ -2,7 +2,7 @@ name: Sync LeetCode
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Every day at midnight
+    - cron: '0 0 1 * *' # Once a month on the 1st
   workflow_dispatch:
 
 jobs:
