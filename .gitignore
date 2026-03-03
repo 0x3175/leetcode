@@ -1,9 +1,8 @@
 # 11ty Build output
-website/_site/
+_site/
 
 # Dependency directories
 node_modules/
-website/node_modules/
 
 # Logs
 npm-debug.log*
