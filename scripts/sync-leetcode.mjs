@@ -56,6 +56,23 @@ async function graphql(query, variables = {}) {
   });
 }
 
+const GET_AC_QUESTION_LIST = `
+query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
+  problemsetQuestionList: questionList(
+    categorySlug: $categorySlug
+    limit: $limit
+    skip: $skip
+    filters: $filters
+  ) {
+    total: totalNum
+    questions: data {
+      title
+      titleSlug
+    }
+  }
+}
+`;
+
 const GET_SUBMISSION_LIST = `
 query submissionList($offset: Int!, $limit: Int!, $lastKey: String, $questionSlug: String) {
   submissionList(offset: $offset, limit: $limit, lastKey: $lastKey, questionSlug: $questionSlug) {
@@ -157,18 +174,54 @@ async function main() {
   // Remote sync if enabled
   if (LEETCODE_SESSION && LEETCODE_CSRF_TOKEN) {
     console.log('Syncing from LeetCode...');
-    const response = await graphql(GET_SUBMISSION_LIST, { offset: 0, limit: 20 });
-    const submissions = response.data?.submissionList?.submissions || [];
-    for (const sub of submissions.filter(s => s.statusDisplay === 'Accepted')) {
-      const filePath = path.join(PROBLEMS_DIR, `${sub.titleSlug}.md`);
-      if (fs.existsSync(filePath)) continue;
+    let skip = 0;
+    const limit = 100;
+    let hasMore = true;
 
-      console.log(`- Fetching ${sub.titleSlug}...`);
-      const detailsResp = await graphql(GET_SUBMISSION_DETAILS, { submissionId: parseInt(sub.id) });
-      const details = detailsResp.data?.submissionDetails;
-      if (details) {
-        fs.writeFileSync(filePath, generateNunjucks(details.question, details));
+    while (hasMore) {
+      console.log(`- Discovering solved problems (skip: ${skip}, limit: ${limit})...`);
+      const listResp = await graphql(GET_AC_QUESTION_LIST, {
+        categorySlug: "",
+        skip,
+        limit,
+        filters: { status: "AC" }
+      });
+
+      const questions = listResp.data?.problemsetQuestionList?.questions || [];
+      if (questions.length === 0) {
+        hasMore = false;
+        break;
       }
+
+      for (const q of questions) {
+        const filePath = path.join(PROBLEMS_DIR, `${q.titleSlug}.md`);
+        if (fs.existsSync(filePath)) continue;
+
+        console.log(`  - Found new solved problem: ${q.titleSlug}. Fetching latest submission...`);
+
+        // Fetch the latest accepted submission for this specific question
+        const subResp = await graphql(GET_SUBMISSION_LIST, {
+          offset: 0,
+          limit: 1,
+          questionSlug: q.titleSlug
+        });
+
+        const submissions = subResp.data?.submissionList?.submissions || [];
+        const latestAccepted = submissions.find(s => s.statusDisplay === 'Accepted');
+
+        if (latestAccepted) {
+          console.log(`    - Fetching details for submission ${latestAccepted.id}...`);
+          const detailsResp = await graphql(GET_SUBMISSION_DETAILS, { submissionId: parseInt(latestAccepted.id) });
+          const details = detailsResp.data?.submissionDetails;
+          if (details) {
+            fs.writeFileSync(filePath, generateNunjucks(details.question, details));
+          }
+        } else {
+          console.log(`    - Warning: No accepted submission found for ${q.titleSlug} despite AC status.`);
+        }
+      }
+
+      skip += limit;
     }
   }
 
