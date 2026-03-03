@@ -16,7 +16,6 @@ const LEETCODE_CSRF_TOKEN = process.env.LEETCODE_CSRF_TOKEN;
 const COOKIES = `LEETCODE_SESSION=${LEETCODE_SESSION}; csrftoken=${LEETCODE_CSRF_TOKEN}`;
 
 const PROBLEMS_DIR = path.join(__dirname, '../src/problems');
-const OLD_PROBLEMS_JSON = path.join(__dirname, '../problems.json');
 
 if (!fs.existsSync(PROBLEMS_DIR)) {
   fs.mkdirSync(PROBLEMS_DIR, { recursive: true });
@@ -155,22 +154,6 @@ ${submission.code}
 }
 
 async function main() {
-  // Migrate old first
-  if (fs.existsSync(OLD_PROBLEMS_JSON)) {
-    console.log('Migrating from old problems.json...');
-    const problems = JSON.parse(fs.readFileSync(OLD_PROBLEMS_JSON, 'utf-8'));
-    for (const p of problems) {
-      const filePath = path.join(PROBLEMS_DIR, `${p.titleSlug}.md`);
-      if (fs.existsSync(filePath)) continue;
-
-      const content = generateNunjucks(
-        { title: p.title, titleSlug: p.titleSlug, content: p.content, topicTags: [] },
-        { code: p.code, lang: { name: p.lang === 'ac' ? 'js' : (p.lang || 'js') } }
-      );
-      fs.writeFileSync(filePath, content);
-    }
-  }
-
   // Remote sync if enabled
   if (LEETCODE_SESSION && LEETCODE_CSRF_TOKEN) {
     console.log('Syncing from LeetCode...');
