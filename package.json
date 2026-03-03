@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "leetcode",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,6 @@
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "lucide-static": "^0.576.0"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
   }
 }
